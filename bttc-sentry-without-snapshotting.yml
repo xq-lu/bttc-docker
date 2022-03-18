@@ -41,8 +41,7 @@ services:
     container_name: bttc0
     command: >
       sh -c "
-        echo ------------------------------------ \
-        && cd /root \
+        cd /root \
         && wget -O setup.sh ${BTTC_SETUP} \
         && wget -O genesis.json ${BTTC_GENESIS} \
         && wget -O static-nodes.json ${BTTC_STATIC_FILE} \
