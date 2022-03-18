@@ -45,10 +45,10 @@ Note - If you are using different snapshot files, make changes for file names ac
 
 then execute follow commands.
 ```
-mkdir -p bttc/snapshot
-mkdir -p delivery/snapshot
-mv <path-to-delivery-snapshot-file> delivery/snapshot
-mv <path-to-bttc-snapshot-file> bttc/snapshot
+mkdir -p bttc/snapshots
+mkdir -p delivery/snapshots
+mv <path-to-delivery-snapshot-file> delivery/snapshots
+mv <path-to-bttc-snapshot-file> bttc/snapshots
 ```
 Note - please make sure to download the snapshot files to the right place.
 
@@ -66,7 +66,6 @@ In `mainnet-199.env`, change the following:
 * `BTTC_TAG` — latest bttc release tag.make sure this tag should be same as your bttc docker images version mentioned above.  Example: `BTTC_TAG=v1.0.1`.
 * `BTTC_MODE=` — bttc node mode.By default, full mode is enabled in .env files. To start archive node, set BTTC_MODE=archive
 . Example: `BTTC_MODE="full"`.  
-
 
 
 4.For setting up nodes:
@@ -94,7 +93,7 @@ Example(use snapshots,in testnetnet):
 docker-compose -f bttc-sentry-with-snapshotting.yml --env-file testnet-1029.env up
 ```
 
-Note - If your docker-compose doesn't support `--env-file` flag, then copy testnet-1029.env/mainnet-199.env to `.env` and run the following command
+Note - If your docker-compose doesn't support `--env-file` flag, then copy testnet-1029.env/mainnet-199.env to `.env` and run the command below.
 
 
 5.For checking the status of delivery use the following api
